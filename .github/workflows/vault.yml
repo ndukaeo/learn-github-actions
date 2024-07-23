@@ -1,0 +1,18 @@
+name: grab vault value
+on: [ workflow_dispatch]
+jobs:
+  DEV:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Import Secrets
+        id: import-secrets
+        uses: hashicorp/vault-action@v2
+        with:
+          url: https://vault-internal.banecio-devops.online:8200
+          token: ${{ secrets.VAULT_TOKEN }}
+          tlsSkipVerify: true
+          secrets: |
+            kv/data/test | MYPASS ;
+      - run: env
+
+
