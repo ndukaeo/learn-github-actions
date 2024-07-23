@@ -8,5 +8,5 @@ jobs:
           pwd
           hostname
           ls
-#          ip a
+          ip a
 
