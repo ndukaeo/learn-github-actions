@@ -4,7 +4,7 @@ jobs:
   DEV:
     runs-on: ubuntu-latest
     steps:
-      - name: Import Secrets
+      - name: Import secrets
         id: import-secrets
         uses: hashicorp/vault-action@v2
         with:
